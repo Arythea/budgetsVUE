@@ -23,9 +23,12 @@ ul.nav {
 ul.nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
 }
 
 ul.nav a.router-link-exact-active {
-  color: #42b983 !important;
+  color: #1ba8ab !important;
+  text-decoration: underline;
 }
+
 </style>

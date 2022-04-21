@@ -3,9 +3,11 @@
     <b-row>
       <b-col cols="9">
         <form action="">
-          <p>¿Qué quieres hacer?</p>
+          <h1>Create your budget</h1>
+          <h2>Your info</h2>
           <input type="text" placeholder="Project Name" v-model="projectName">
           <input type="text" placeholder="Client Name" v-model="clientName">
+          <h2>What do you need?</h2>
           <div v-for="(service,index) in services" :key="index">
             <input type="checkbox" @change="changeService(index)" :checked="service.seleccionat">
             {{ service.nom }} ({{ service.preu }}€)
@@ -15,10 +17,14 @@
           </div>
           <p>Preu: {{ total }}</p>
         </form>
-        <b-button class="bg-success" @click="saveBudget">SAVE</b-button>
-
-        <b-button @click="$router.push('/')">BACK</b-button>
-        <button @click="checkValues">Check</button>
+        <b-row>
+          <b-col cols="1">
+            <b-button class="main-btn mr-2 d-inline-block" @click="saveBudget">SAVE</b-button>
+          </b-col>
+          <b-col cols="1">
+            <b-button class="ml-2 d-inline-block" @click="$router.push('/')">BACK</b-button>
+          </b-col>
+        </b-row>
       </b-col>
       <b-col cols="3">
         <BudgetsList :array-budgets="arrayBudgets" />
@@ -44,21 +50,21 @@ export default {
       clientName: "",
       services: [
         {
-          nom: "Una pàgina web",
+          nom: "Website",
           alias: "web",
           preu: "500",
           seleccionat: false,
           mostraComponent: true
         },
         {
-          nom: "Una consultoria SEO",
+          nom: "SEO consulting",
           alias: "seo",
           preu: "300",
           seleccionat: false,
           mostraComponent: false
         },
         {
-          nom: "Una campanya de Google Ads  ",
+          nom: "Google Ads campaign",
           alias: "sem",
           preu: "200",
           seleccionat: false,
@@ -170,3 +176,17 @@ export default {
   }
 }
 </script>
+<style scoped>
+
+.main-btn {
+  background-color: #1ba8ab;
+  border-color: #0a6869;
+  color: white;
+}
+.main-btn:hover {
+  background-color: #54c3c5;
+}
+h2 {
+  margin-top: 20px;
+}
+</style>

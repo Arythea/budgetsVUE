@@ -2,13 +2,13 @@
   <b-container>
     <b-row>
       <div cols="12">
-        <h2>Pressupostos guardats</h2>
-        <button @click="order('date','asc')">Data ascendent</button>
-        <button @click="order('date','desc')">Data descendent</button>
-        <button @click="order('project','asc')">Nom ascendent</button>
-        <button @click="order('project','desc')">Nom descendent</button>
-        <button @click="order('date','desc');searchString='';searchBudgets();">Reset</button>
-        <input type="text" @keyup="searchBudgets()" v-model="searchString">
+        <h2>Saved budgets</h2>
+        <button @click="order('date','asc')">Date ascendending</button>
+        <button @click="order('date','desc')">Date descending</button>
+        <button @click="order('project','asc')">Name ascending</button>
+        <button @click="order('project','desc')">Name descending</button>
+        <input type="text" @keyup="searchBudgets()" v-model="searchString" placeholder="search by project name...">
+        <button @click="order('date','desc');searchString='';searchBudgets();">Reset all</button>
         <hr>
         <div v-for="(budget,index) in auxArrayBudgets" :key="index">
           <h3>{{ budget.project }}</h3>
@@ -85,5 +85,9 @@ export default {
 }
 .url {
   overflow-x: scroll;
+}
+button {
+  display: block;
+  margin: 5px;
 }
 </style>

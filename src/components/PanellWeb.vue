@@ -1,19 +1,19 @@
 <template>
   <b-container>
     <b-row>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="card p-3">
-          <label for="num_paginas">Número de páginas</label>
+          <label for="num_paginas">Total number of sections</label>
           <div class="d-flex">
             <b-button @click="numPaginas--" class="d-inline-block w-25 bg-danger">-</b-button>
             <input class="d-inline-block w-50 text-center" type="number" v-model.number="numPaginas" name="num_paginas" min="0">
-            <b-button @click="numPaginas++" class="d-inline-block w-25 bg-success">+</b-button> <b-icon-info-circle-fill v-b-modal.modal-1 />
+            <b-button @click="numPaginas++" class="d-inline-block w-25 bg-success">+</b-button> <span class="h3 mb-2"><b-icon-info-circle-fill v-b-modal.modal-1 /></span>
           </div>
-          <label for="num_idiomas">Número de idiomas</label>
+          <label for="num_idiomas">Total number of languages</label>
           <div class="d-flex">
             <b-button @click="numIdiomas--" class="d-inline-block w-25 bg-danger">-</b-button>
             <input class="d-inline-block w-50 text-center" type="number" v-model.number="numIdiomas" name="num_idiomas" min="0">
-            <b-button @click="numIdiomas++" class="d-inline-block w-25 bg-success">+</b-button> <b-icon-info-circle-fill v-b-modal.modal-2 />
+            <b-button @click="numIdiomas++" class="d-inline-block w-25 bg-success">+</b-button> <span class="h3 mb-2"> <b-icon-info-circle-fill v-b-modal.modal-2 /></span>
           </div>
         </div>
         <p> {{ total }} </p>
